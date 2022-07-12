@@ -18,6 +18,10 @@ public class FacadeSolution {
         serviceCache.fetch();
     }
 
+    interface IRepository {
+        IRepositoryObject fetch();
+    }
+
     interface IRepositoryObject {
         int getValOne();
         String getValTwo();
@@ -27,10 +31,6 @@ public class FacadeSolution {
     interface IAnswer {
         int getId();
         String getAnswer();
-    }
-
-    interface IRepository {
-        IRepositoryObject fetch();
     }
 
     static class ServiceA {
@@ -139,10 +139,10 @@ public class FacadeSolution {
         private List<IAnswer> _answers = new ArrayList<IAnswer>()
         {
             {
-                add(new CacheAnswer(0, "Answer"));
-                add(new CacheAnswer(1, "Answer1"));
-                add(new CacheAnswer(2, "Answer2"));
-                add(new CacheAnswer(3, "Answer3"));
+                add(new CacheAnswer(4, "Answe4"));
+                add(new CacheAnswer(5, "Answer5"));
+                add(new CacheAnswer(6, "Answer6"));
+                add(new CacheAnswer(7, "Answer7"));
             }
         };
 
@@ -152,13 +152,13 @@ public class FacadeSolution {
     }
 
     static class CacheAnswer implements IAnswer {
-        private int _valOne = 1;
-        private String _valTwo = "Two";
+        private int _valOne = 4;
+        private String _valTwo = "Five";
         private int _id;
         private String _answer;
 
-        public CacheAnswer(int ID, String answer) {
-            _id = ID;
+        public CacheAnswer(int id, String answer) {
+            _id = id;
             _answer = answer;
         }
 

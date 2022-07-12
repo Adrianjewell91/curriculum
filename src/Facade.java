@@ -13,7 +13,7 @@ public class Facade {
 
     private static void run() {
         ServiceA serviceA = new ServiceA(new DBRepository());
-        serviceA.fetch(0);
+        serviceA.fetch();
     }
 
     static class ServiceA {
@@ -23,7 +23,7 @@ public class Facade {
             _repository = dRepository;
         }
 
-        public RepositoryObject fetch(int useCache) {
+        public RepositoryObject fetch() {
             return _repository.fetch();
         }
     }
@@ -71,18 +71,18 @@ public class Facade {
         private List<CacheAnswer> answers = new ArrayList<CacheAnswer>()
         {
             {
-                add(new CacheAnswer(0, "Answer"));
-                add(new CacheAnswer(1, "Answer1"));
-                add(new CacheAnswer(2, "Answer2"));
-                add(new CacheAnswer(3, "Answer3"));
+                add(new CacheAnswer(4, "Answer4"));
+                add(new CacheAnswer(5, "Answer5"));
+                add(new CacheAnswer(6, "Answer6"));
+                add(new CacheAnswer(7, "Answer7"));
             }
         };
     }
 
     // Cache object duplicates data that is the same across the enumerable.
     static class CacheAnswer {
-        private int _valOne = 1;
-        private String _valTwo = "Two";
+        private int _valOne = 4;
+        private String _valTwo = "Five";
         private int _id;
         private String _answer;
 
@@ -92,11 +92,8 @@ public class Facade {
         }
     }
 
+    // Solution Hints:
+    // interface IRepository {
     // interface IRepositoryObject {
-    //     int getValOne();
-    //     String getValTwo();
-    //     List<IAnswer> getAnswers();
-    // }
-
-    // interface RepositoryFacade
+    // interface IAnswer {
 }
