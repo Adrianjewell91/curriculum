@@ -1,8 +1,7 @@
 package curriculum.project1.problem;
 
-
 /*
- * Project 1: Refactor this application.
+ * Project 1: Refactor the application.
  * ServiceB cannot use the publishing logic, but ServiceA should use it.
  */
 public class App {

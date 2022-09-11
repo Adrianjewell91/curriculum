@@ -12,14 +12,14 @@ public class Facade {
     }
 
     private static void run() {
-        ServiceA serviceA = new ServiceA(new DBRepository());
-        serviceA.fetch();
+        Service service = new Service(new DBRepository());
+        service.fetch();
     }
 
-    static class ServiceA {
+    public static class Service {
         private final DBRepository _repository;
 
-        public ServiceA(DBRepository dRepository) {
+        public Service(DBRepository dRepository) {
             _repository = dRepository;
         }
 
@@ -28,7 +28,7 @@ public class Facade {
         }
     }
 
-    static class DBRepository {
+    public static class DBRepository {
         public DBRepository() {}
 
         public RepositoryObject fetch() {
@@ -36,7 +36,7 @@ public class Facade {
         }
     }
 
-    static class RepositoryObject {
+    public static class RepositoryObject {
         private int _valOne = 1;
         private String _valTwo = "Two";
         private List<Answer> _answers = new ArrayList<Answer>()  {
@@ -49,7 +49,7 @@ public class Facade {
         };
     }
 
-    static class Answer {
+    public static class Answer {
         private int _id;
         private String _answer;
 
@@ -59,7 +59,7 @@ public class Facade {
         }
     }
 
-    static class Cache {
+    public static class Cache {
         public Cache() {}
 
         public CacheObject get() {
@@ -67,7 +67,7 @@ public class Facade {
         }
     }
 
-    static class CacheObject {
+    public static class CacheObject {
         private List<CacheAnswer> answers = new ArrayList<CacheAnswer>()
         {
             {
@@ -80,7 +80,7 @@ public class Facade {
     }
 
     // Cache object duplicates data that is the same across the enumerable.
-    static class CacheAnswer {
+    public static class CacheAnswer {
         private int _valOne = 4;
         private String _valTwo = "Five";
         private int _id;

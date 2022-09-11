@@ -1,3 +1,8 @@
+## TODO 
+Come up with tests.
+Write another project.
+Create a scalable certification system.
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.

@@ -12,31 +12,31 @@ public class FacadeSolution {
     }
 
     private static void run() {
-        ServiceA serviceDB = new ServiceA(new CacheRepository());
-        ServiceA serviceCache = new ServiceA(new DBRepository());
+        Service serviceDB = new Service(new CacheRepository());
+        Service serviceCache = new Service(new DBRepository());
         serviceDB.fetch();
         serviceCache.fetch();
     }
 
-    interface IRepository {
+    public interface IRepository {
         IRepositoryObject fetch();
     }
 
-    interface IRepositoryObject {
+    public interface IRepositoryObject {
         int getValOne();
         String getValTwo();
         List<IAnswer> getAnswers();
     }
 
-    interface IAnswer {
+    public interface IAnswer {
         int getId();
         String getAnswer();
     }
 
-    static class ServiceA {
+    public static class Service {
         private final IRepository _repository;
 
-        public ServiceA(IRepository repository) {
+        public Service(IRepository repository) {
             _repository = repository;
         }
 
@@ -45,7 +45,7 @@ public class FacadeSolution {
         }
     }
 
-    static class DBRepository implements IRepository {
+    public static class DBRepository implements IRepository {
         public DBRepository() {}
 
         public IRepositoryObject fetch() {
@@ -53,7 +53,7 @@ public class FacadeSolution {
         }
     }
 
-    static class CacheRepository implements IRepository {
+    public static class CacheRepository implements IRepository {
         private Cache _cache = new Cache();
 
         public CacheRepository() {}
@@ -63,7 +63,7 @@ public class FacadeSolution {
         }
     }
 
-    static class Cache {
+    public static class Cache {
         public Cache() {}
 
         public CacheObject get() {
@@ -71,7 +71,7 @@ public class FacadeSolution {
         }
     }
 
-    static class CacheObjectFacade implements IRepositoryObject {
+    public static class CacheObjectFacade implements IRepositoryObject {
         private final CacheObject _cacheObject;
 
         public CacheObjectFacade(CacheObject cacheObject) {
@@ -91,7 +91,7 @@ public class FacadeSolution {
         }
     }
 
-    static class RepositoryObject implements IRepositoryObject {
+    public static class RepositoryObject implements IRepositoryObject {
         private int _valOne = 1;
         private String _valTwo = "Two";
         private List<IAnswer> _answers = new ArrayList<IAnswer>()  {
@@ -116,7 +116,7 @@ public class FacadeSolution {
         }
     }
 
-    static class Answer implements IAnswer {
+    public static class Answer implements IAnswer {
         private int _id;
         private String _answer;
 
@@ -135,7 +135,7 @@ public class FacadeSolution {
 
     // From Business:
     // Cache object duplicates data that is the same across the enumerable.
-    static class CacheObject {
+    public static class CacheObject {
         private List<IAnswer> _answers = new ArrayList<IAnswer>()
         {
             {
@@ -151,7 +151,7 @@ public class FacadeSolution {
         }
     }
 
-    static class CacheAnswer implements IAnswer {
+    public static class CacheAnswer implements IAnswer {
         private int _valOne = 4;
         private String _valTwo = "Five";
         private int _id;
