@@ -4,7 +4,7 @@ Come up with tests.
     And make sure that the test files weren't changed in the submission, which means
     No changes to the test files are allowed. 
 Write another project.
-Create a scalable certification system.
+Create a scalable certification system, pay money then get certified.
 
 ## Getting Started
 

@@ -14,8 +14,10 @@ public class Facade {
     }
 
     private static void run() {
-        Service service = new Service(new DBRepository());
-        service.fetch();
+        Service serviceDB = new Service(new DBRepository());
+        serviceDB.fetch();
+        Cache cache = new Cache();
+        cache.get();
     }
 
     public static class Service {

@@ -12,15 +12,8 @@ public class App {
     private static void run() {
         ServiceA serviceA = new ServiceA(new Repository(new Publisher()));
         serviceA.call(0);
-
-        // IService serviceA = new ServiceA(new Decorator(new Publisher(), new Repository()));
-
-        // IService serviceB = new ServiceB(new Repository());
-
-        // serviceA.call(0);
-        // serviceB.call(1);
-
-        System.out.println("Ran Services");
+        ServiceB serviceB = new ServiceB(new Repository(new Publisher()));
+        serviceB.call(1);
     }
 }
 
