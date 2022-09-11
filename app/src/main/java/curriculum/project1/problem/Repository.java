@@ -1,5 +1,6 @@
-package curriculum;
-class Repository {
+package curriculum.project1.problem;
+
+public class Repository {
     private final Publisher _publisher;
 
     public Repository(Publisher publisher) {
@@ -11,12 +12,3 @@ class Repository {
         return true;
     }
 }
-
-// class Repository implements IRepository {
-//     public Repository() {
-//     }
-
-//     public boolean update(int val) {
-//         return true;
-//     }
-// }

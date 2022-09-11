@@ -1,6 +1,6 @@
-package curriculum;
+package curriculum.project1.problem;
 
-class Publisher {
+public class Publisher {
     public Publisher() {
     }
 

@@ -1,6 +1,4 @@
-package curriculum;
-import curriculum.project1.problem.*;
-import curriculum.project1.solution.*;
+package curriculum.project1.solution;
 
 /*
  * Project 1: Refactor this application to use the decorator pattern.
@@ -16,13 +14,11 @@ public class App {
     }
 
     private static void run() {
-        System.out.println("Running Services");
-        try {
-            curriculum.project1.solution.App.main(null);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }        
+        IService serviceWithPublish = new ServiceA(new Decorator(new Publisher(), new Repository()));
+        IService serviceWithOutPublish = new ServiceB(new Repository());
+
+        serviceWithPublish.call(1);
+        serviceWithOutPublish.call(2);
     }
 }
 
