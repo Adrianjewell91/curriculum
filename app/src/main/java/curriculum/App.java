@@ -1,6 +1,4 @@
 package curriculum;
-import curriculum.project1.problem.*;
-import curriculum.project1.solution.*;
 
 /*
  * Project 1: Refactor this application to use the decorator pattern.

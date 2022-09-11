@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-* Project 1: Refactor this application to use the facade pattern.
+* Project 1: Refactor this application. 
 * ServiceA calls for data from the repo, but it now needs the option to call from the cache.
-* The cache stores the data in a different way, but the data returned to the client needs to match the status quo.
+* The cache stores the data in a different structure, but the reponse from the service requires the same structure.
  */
 public class FacadeSolution {
     public static void main(String[] args) throws Exception {
