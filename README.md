@@ -1,5 +1,8 @@
 ## TODO 
 Come up with tests.
+    Have them print out a massive line of T and F and there is any F then the tests didn't pass. 
+    And make sure that the test files weren't changed in the submission, which means
+    No changes to the test files are allowed. 
 Write another project.
 Create a scalable certification system.
 

@@ -1,3 +1,5 @@
+package curriculum.project2.problem;
+
 import java.util.ArrayList;
 import java.util.List;
 
